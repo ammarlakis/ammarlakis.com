@@ -37,7 +37,14 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
-      // }, {
+    },{
+        resolve: "gatsby-source-filesystem",
+        options: {
+          name: "articles",
+          path: "./articles/",
+        },
+        __key: "articles",
+        // }, {
       //   resolve: 'gatsby-plugin-google-gtag',
       //   options: {
 
