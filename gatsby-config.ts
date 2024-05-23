@@ -30,6 +30,11 @@ const config: GatsbyConfig = {
               maxWidth: 1200,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+
         ],
       }
     },

@@ -1,5 +1,5 @@
 ---
-title: My First Article
+title: My First Artiscle
 date: 2022-01-01
 ---
 
@@ -15,6 +15,21 @@ You can add more sections, subheadings, and content as needed.
 
 Here's an example of a code block:
 
+```javascript
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
 Here's an image
 
 ![Alt text](../images/images.jpeg)
+
