@@ -23,6 +23,9 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            frontmatter {
+              tags
+            }
           }
         }
       }
@@ -45,4 +48,24 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  let tags: string[] = [];
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (node.frontmatter.tags) {
+      tags = tags.concat(node.frontmatter.tags);
+    }
+  });
+
+  tags = [...new Set(tags)];
+
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${tag}/`,
+      component: path.resolve(`./src/pages/tag.tsx`),
+      context: {
+        tag,
+      },
+    });
+  });
+
 };
