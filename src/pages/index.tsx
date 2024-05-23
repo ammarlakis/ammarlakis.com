@@ -24,20 +24,21 @@ const HomePage = () => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <div>
-      <h1>My Blog</h1>
+    <div className="container mx-auto px-4 mt-8">
+      <h1 className="text-4xl font-bold mb-4" >Ammar Lakis</h1>
       <ul>
         {posts.map(({ node }: { node: any }) => (
-          <li key={node.id}>
+          <li key={node.id} className="mb-4">
             <Link to={node.fields.slug}>
-              <h2>{node.frontmatter.title}</h2>
+              <h2 className="text-2xl font-bold">{node.frontmatter.title}</h2>
             </Link>
-            <p>{node.frontmatter.date}</p>
+            <p className="text-gray-500">{node.frontmatter.date}</p>
           </li>
         ))}
       </ul>
     </div>
   );
 };
+
 
 export default HomePage;

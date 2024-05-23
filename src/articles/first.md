@@ -14,3 +14,7 @@ You can add more sections, subheadings, and content as needed.
 ### Code Example
 
 Here's an example of a code block:
+
+Here's an image
+
+![Alt text](../images/images.jpeg)

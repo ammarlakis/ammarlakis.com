@@ -5,18 +5,22 @@ const PostPage = ({ data }: { data: any }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <div>
-      <h1>Posts</h1>
+    <div className="container mx-auto px-4 mt-8">
+      <h1 className="text-4xl font-bold mb-4" >Ammar Lakis</h1>
       {posts.map(({ node }: { node: any }) => (
-        <div key={node.id}>
-          <h2>{node.frontmatter.title}</h2>
-          <p>{node.frontmatter.date}</p>
-          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+        <div key={node.id} className="mb-8">
+          <h2 className="text-xl font-bold mb-2">{node.frontmatter.title}</h2>
+          <p className="text-gray-500 mb-2">{node.frontmatter.date}</p>
+          <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: node.html }}
+          />
         </div>
       ))}
     </div>
   );
 };
+
 
 export const query = graphql`
   query {
@@ -34,5 +38,6 @@ export const query = graphql`
     }
   }
 `;
+
 
 export default PostPage;
