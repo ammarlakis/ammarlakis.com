@@ -1,6 +1,7 @@
 ---
 title: My First Artiscle
 date: 2022-01-01
+tags: ["test", "test2"]
 ---
 
 # My First Article
