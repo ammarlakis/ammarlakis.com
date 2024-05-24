@@ -1,7 +1,7 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions, getNode }: { node: any, actions: any, getNode: any }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'pages' });
@@ -13,7 +13,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }: { graphql: any, actions: any}) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPostTemplate = path.resolve('src/pages/post.tsx');
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMarkdownRemark.edges.forEach(({ node }: { node: any}) => {
     createPage({
       path: node.fields.slug,
       component: blogPostTemplate,
@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   let tags: string[] = [];
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMarkdownRemark.edges.forEach(({ node }: { node: any }) => {
     if (node.frontmatter.tags) {
       tags = tags.concat(node.frontmatter.tags);
     }
