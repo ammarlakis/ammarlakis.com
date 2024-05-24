@@ -35,7 +35,7 @@ const HomePage = () => {
             </Link>
             <p className="text-gray-500">{node.frontmatter.date}</p>
             <div className="flex flex-wrap mt-2">
-              {node.frontmatter.tags && node.frontmatter.tags.map(tag => (
+              {node.frontmatter.tags && node.frontmatter.tags.map((tag: string) => (
                 <Link to={`/tags/${tag}/`} key={tag} className="mr-2 text-blue-500">
                   <div className="bg-gray-100 rounded-md px-2 py-1">
                     #{tag}

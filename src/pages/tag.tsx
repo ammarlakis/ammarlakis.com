@@ -18,13 +18,12 @@ const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => 
           </li>
         ))}
       </ul>
-      <Link to="/tags">All tags</Link>
     </div>
   );
 };
 
 export const pageQuery = graphql`
-  query($tag: String!) {
+  query($tag: String) {
     allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {

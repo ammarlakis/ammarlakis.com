@@ -1,9 +1,12 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 const PostPage = ({ data }: { data: any }) => {
-  const post = data.markdownRemark; // Fetch the single post
+  const post = data.markdownRemark;
+
+  if (!post) {
+    return <div>No post found</div>;
+  }
 
   return (
     <div className="container mx-auto px-4 mt-8 mb-8">
@@ -17,7 +20,7 @@ const PostPage = ({ data }: { data: any }) => {
         />
       </div>
       <div className="flex flex-wrap mt-2">
-        {post.frontmatter.tags && post.frontmatter.tags.map(tag => (
+        {post.frontmatter.tags && post.frontmatter.tags.map((tag: string) => (
           <Link to={`/tags/${tag}/`} key={tag} className="mr-2 text-blue-500">
             <div className="bg-gray-100 rounded-md px-2 py-1">
               #{tag}
@@ -30,7 +33,7 @@ const PostPage = ({ data }: { data: any }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       frontmatter {
