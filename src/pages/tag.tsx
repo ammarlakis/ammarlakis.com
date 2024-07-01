@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Title from '../components/title';
 
 const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => {
   const { tag } = pageContext;
@@ -7,7 +8,8 @@ const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => 
 
   return (
     <div className="container mx-auto px-4 mt-8">
-      <h1 className="text-4xl font-bold mb-4">Posts tagged with "{tag}"</h1>
+      <Title />
+      <h2 className="text-4xl font-bold mb-4">Posts tagged with "{tag}"</h2>
       <ul>
         {edges.map(({ node }: { node: any }) => (
           <li key={node.id} className="mb-4">

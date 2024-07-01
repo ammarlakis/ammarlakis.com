@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import Title from '../components/title';
 
 const HomePage = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,7 @@ const HomePage = () => {
 
   return (
     <div className="container mx-auto px-4 mt-8">
-      <h1 className="text-4xl font-bold mb-4">Ammar Lakis</h1>
+      <Title />
       <ul>
         {posts.map(({ node }: { node: any }) => (
           <li key={node.id} className="mb-4">
