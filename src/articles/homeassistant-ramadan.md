@@ -25,7 +25,7 @@ I had to add a small delay after starting the TV because the TV startup time is 
 
 Here's what the full automation looks like:
 
-```
+```yaml
 alias: Ramadan Iftar Adhan
 description: ""
 trigger:
