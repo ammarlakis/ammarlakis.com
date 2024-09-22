@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Title from '../components/title';
+import Container from '../components/container';
 
 const PostPage = ({ data }: { data: any }) => {
   const post = data.markdownRemark;
@@ -10,7 +11,7 @@ const PostPage = ({ data }: { data: any }) => {
   }
 
   return (
-    <div className="container mx-auto px-4 mt-8 mb-8">
+    <Container>
       <Title />
       <div key={post.id} className="mb-8">
         <h2 className="text-xl font-bold mb-2">{post.frontmatter.title}</h2>
@@ -29,7 +30,7 @@ const PostPage = ({ data }: { data: any }) => {
           </Link>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

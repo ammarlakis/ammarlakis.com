@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Title from '../components/title';
+import Container from '../components/container';
 
 const HomePage = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,7 @@ const HomePage = () => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <div className="container mx-auto px-4 mt-8">
+    <Container>
       <Title />
       <ul>
         {posts.map(({ node }: { node: any }) => (
@@ -47,7 +48,7 @@ const HomePage = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
 

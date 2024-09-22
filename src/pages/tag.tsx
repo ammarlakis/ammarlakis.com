@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Title from '../components/title';
+import Container from '../components/container';
 
 const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => {
   const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
 
   return (
-    <div className="container mx-auto px-4 mt-8">
+    <Container>
       <Title />
       <h2 className="text-4xl font-bold mb-4">Posts tagged with "{tag}"</h2>
       <ul>
@@ -20,7 +21,7 @@ const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => 
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
 
