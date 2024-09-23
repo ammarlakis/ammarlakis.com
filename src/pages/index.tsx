@@ -6,7 +6,7 @@ import Container from '../components/container';
 const HomePage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMarkdownRemark(sort: {frontmatter: {date: DESC }}) {
         edges {
           node {
             id
