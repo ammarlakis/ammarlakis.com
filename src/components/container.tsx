@@ -1,15 +1,15 @@
 import React, { ReactNode } from 'react';
 
-type ArticleContainerProps = {
+type ContainerProps = {
   children: ReactNode;
 };
 
-const ArticleContainer: React.FC<ArticleContainerProps> = ({ children }) => {
+const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
-    <div className="container px-4 mt-8 max-w-prose mx-auto p-8">
+    <div className="container mx-auto px-4 mt-8 max-w-prose p-8">
       {children}
     </div>
   );
 };
 
-export default ArticleContainer;
+export default Container;
