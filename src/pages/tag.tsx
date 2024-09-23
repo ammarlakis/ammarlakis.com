@@ -28,7 +28,8 @@ const TagTemplate = ({ data, pageContext }: { data: any, pageContext: any }) => 
 export const pageQuery = graphql`
   query($tag: String) {
     allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } },
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
