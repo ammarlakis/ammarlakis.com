@@ -14,7 +14,7 @@ const PostPage = ({ data }: { data: any }) => {
     <Container>
       <Title />
       <div key={post.id} className="mb-8">
-        <h2 className="text-xl font-bold mb-2">{post.frontmatter.title}</h2>
+        <h1 className="text-2xl font-bold mb-2">{post.frontmatter.title}</h1>
         <p className="text-gray-500 mb-2">{post.frontmatter.date}</p>
         <div
           className="prose mt-2"
