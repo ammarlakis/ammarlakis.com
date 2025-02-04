@@ -98,7 +98,7 @@ jobs:
 
 With this workflow, developers simply trigger an action, fill in the details, and the system handles the rest. This structure is flexible enough to accommodate most use cases without overwhelming developers with complex tooling.
 
-You can find a real-world example of this approach in the [github-iac](https://github.com/ammarlakis/github-iac) project that I use to manage my git repositories.
+You can find a real-world example of this approach in the [github-iac](https://github.com/ammarlakis/github-iac) project that I use to manage my git repositories. Another example is project [aws-org-iac](https://github.com/ammarlakis/aws-org-iac) that I'm working on for managing an AWS organization.
 
 ## Benefits and Limitations
 
