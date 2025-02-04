@@ -6,7 +6,7 @@ tags: ["homeassistant", "kubernetes", "smart-home"]
 
 Moving to Germany exposed me to a very open market of skills and ideas to explore. One thing I really wanted to try was setting up a smart home. Being dedicated to automation and optimization, this was the natural next step for me.
 
-To set up a smart home, you have two options: opt for a proprietary cloud solution like Google Home or Apple HomeKit, or use open-source solutions. I decided to go with Home Assistant due to its excellent support, the wide range of integrations —many of which are created by the community— and because I'm a techie who likes Linux.
+To set up a smart home, you have two options: opt for a proprietary cloud solution like Google Home or Apple HomeKit, or use open-source solutions. I decided to go with Home Assistant due to its excellent support, the wide range of integrations  - many of which are created by the community -  and because I'm a techie who likes Linux.
 
 Now, I won't get into the boring details of how I run it on a k3s cluster on a Raspberry Pi. The documentation is quite clear, and if you want a quick start on Kubernetes, you can use my [Home Assistant chart](https://github.com/ammarlakis/home-assistant-chart).
 

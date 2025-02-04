@@ -4,7 +4,7 @@ date: 2024-11-03
 tags: ["developer-experience", "terraform", "platform-engineering", "github", "actions"]
 ---
 
-The adoption of infrastructure as code (IaC) has bridged gaps between infrastructure teams and developers, allowing for a shared understanding of resources. However, there's a catch: IaC tools come with a learning curve, and infrastructure work isn't typically in a developer's skill set. This often means that developers either invest time in learning these tools—relying on the infrastructure team for troubleshooting—or leave the work entirely to ops, which creates bottlenecks and delays, even for small changes.
+The adoption of infrastructure as code (IaC) has bridged gaps between infrastructure teams and developers, allowing for a shared understanding of resources. However, there's a catch: IaC tools come with a learning curve, and infrastructure work isn't typically in a developer's skill set. This often means that developers either invest time in learning these tools - relying on the infrastructure team for troubleshooting - or leave the work entirely to ops, which creates bottlenecks and delays, even for small changes.
 
 To overcome these challenges, we need true self-service: a model that provides developers with accessible, intuitive tools that embed operational knowledge.
 
@@ -102,7 +102,7 @@ You can find a real-world example of this approach in the [github-iac](https://g
 
 ## Benefits and Limitations
 
-The model is intuitive, integrates smoothly with Git, and avoids Terraform’s complexity for developers. However, it's worth noting that while fast enough for most use cases, this approach isn't the fastest solution out there, and it can become complex if overloaded with features.
+The model is intuitive, integrates smoothly with Git, and avoids Terraform's complexity for developers. However, it's worth noting that while fast enough for most use cases, this approach isn't the fastest solution out there, and it can become complex if overloaded with features.
 This solution is ideal for teams seeking a fast, bootstrap platform without the need to build custom tooling from scratch.
 
 ## Conclusion: Enabling Self-Service Infrastructure for Modern Development

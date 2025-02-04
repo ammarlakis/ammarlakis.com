@@ -8,7 +8,7 @@ Secrets management can feel complex, but at its core, secrets are simply configu
 
 ## Why Manage Secrets in Git?
 
-Traditionally, storing secrets in Git has been discouraged due to exposure risks—secrets in plain text could be inadvertently shared, cloned, or made public. Many teams use dedicated secret management tools, such as Vault or cloud services like AWS Secrets Manager, or manage secrets as environment variables on deployment platforms. While effective, these solutions often introduce external dependencies, additional complexity, and may lack flexibility in meeting custom policy or team needs.
+Traditionally, storing secrets in Git has been discouraged due to exposure risks - secrets in plain text could be inadvertently shared, cloned, or made public. Many teams use dedicated secret management tools, such as Vault or cloud services like AWS Secrets Manager, or manage secrets as environment variables on deployment platforms. While effective, these solutions often introduce external dependencies, additional complexity, and may lack flexibility in meeting custom policy or team needs.
 
 With SOPS and automated workflows, securely managing secrets within Git is now practical and efficient. By storing encrypted secrets alongside deployment code, we leverage version control, auditability, and easy updates while avoiding the overhead of additional infrastructure components.
 
@@ -33,7 +33,7 @@ To securely manage secrets in Git, several key practices are essential:
 
 ## A Modern Solution: SOPS, Git, and GitHub Workflows
 
-By combining **SOPS** with **GitHub Actions**, we achieve a secure, auditable, and developer-friendly approach to secrets management. Here’s how it works:
+By combining **SOPS** with **GitHub Actions**, we achieve a secure, auditable, and developer-friendly approach to secrets management. Here's how it works:
 
 ### Storing Encrypted Secrets in Git
 
@@ -43,7 +43,7 @@ Encryption keys should be managed separately through a secure Key Management Sys
 
 ### Automating Secrets Management with GitHub Actions
 
-GitHub Actions automate the entire secrets management lifecycle—from creation and updates to deletion and deployment. Here’s how this works:
+GitHub Actions automate the entire secrets management lifecycle - from creation and updates to deletion and deployment. Here's how this works:
 
 1. **Branch-Based Updates**  
    When a secret change is needed, a new branch is created. This isolates the update process and enables peer review and policy enforcement before merging.
@@ -55,15 +55,15 @@ GitHub Actions automate the entire secrets management lifecycle—from creation 
    - **Read and Deploy Workflow**: Decrypts secrets and exports them as environment variables, making them accessible securely in subsequent steps.
 
 3. **Controlled Encryption and Decryption**  
-   Encryption and decryption occur within GitHub’s environment, reducing exposure risk and maintaining the least-privilege principle by keeping unencrypted secrets off local machines.
+   Encryption and decryption occur within GitHub's environment, reducing exposure risk and maintaining the least-privilege principle by keeping unencrypted secrets off local machines.
 
 ## Benefits of Managing Secrets with Git and GitHub Workflows
 
 - **Version Control and History**  
-  Git’s version control allows teams to track changes to secrets, offering a historical record of changes and who made them.
+  Git's version control allows teams to track changes to secrets, offering a historical record of changes and who made them.
 
 - **Enhanced Auditability**  
-  With GitHub’s access controls and branch protection rules, it’s easy to audit changes and limit who can update secrets.
+  With GitHub's access controls and branch protection rules, it's easy to audit changes and limit who can update secrets.
 
 - **Streamlined Developer Experience**  
   Developers use familiar tools like Git and GitHub, avoiding additional secret management platforms. Managing secrets as files also simplifies automation and custom workflows.
@@ -132,11 +132,11 @@ jobs:
 
 The secrets name and value are being provided by user input, which means you need to clear access logs, but that's the only thing you need to care about. Secret values are being masked when the reading secrets action loads them as environment variables.
 
-In this implementation, GitSOPS utilizes Git as the storage backend for configuration management, GitHub Actions as the API, and GitHub’s web interface for interaction. In a mature implementation, an internal developer portal could serve as the primary interface, with the GitHub web interface reserved for debugging.
+In this implementation, GitSOPS utilizes Git as the storage backend for configuration management, GitHub Actions as the API, and GitHub's web interface for interaction. In a mature implementation, an internal developer portal could serve as the primary interface, with the GitHub web interface reserved for debugging.
 
 ### GitSOPS per Project
 
-Implementing GitSOPS in individual project workflows allows customization for each project’s unique requirements, such as environment-specific secrets management. However, a lot of steps need to be repeated on all the projects, but that shouldn't be an issue if the correct ownership model is implemented in the company where each team can update their own projects and maintain them.
+Implementing GitSOPS in individual project workflows allows customization for each project's unique requirements, such as environment-specific secrets management. However, a lot of steps need to be repeated on all the projects, but that shouldn't be an issue if the correct ownership model is implemented in the company where each team can update their own projects and maintain them.
 
 ### Central GitSOPS
 
@@ -144,4 +144,4 @@ A central repository holds the workflows, which operate on different project rep
 
 ## Conclusion
 
-Combining SOPS encryption with Git and GitHub workflows enables teams to manage secrets securely and efficiently. This approach leverages Git’s version control, auditability, and ease of use, all while ensuring confidentiality of sensitive information. GitSOPS supports modern, agile development practices within a GitOps framework, offering a practical and scalable solution for secure secrets management.
+Combining SOPS encryption with Git and GitHub workflows enables teams to manage secrets securely and efficiently. This approach leverages Git's version control, auditability, and ease of use, all while ensuring confidentiality of sensitive information. GitSOPS supports modern, agile development practices within a GitOps framework, offering a practical and scalable solution for secure secrets management.
