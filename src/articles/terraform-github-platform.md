@@ -56,6 +56,30 @@ These YAML files are validated against a JSON schema before reaching Terraform i
 }
 ```
 
+And the Terraform code that reads the previous YAML file would look like this:
+
+```hcl
+locals {
+  repositories = {
+    for file in fileset("${path.module}/path/to/yamlfiles", "*.yaml") :
+    trimsuffix(file, ".yaml") => yamldecode(file("${path.module}/path/to/yamlfiles/${file}"))
+  }
+}
+```
+
+A map is generated where each file name becomes the key, and its content are the values assigned at that key. This can be later used to provision resources
+
+```hcl
+resource "github_repository" "create" {
+  for_each = local.repositories
+
+  name = each.key
+
+  visibility  = each.value.visibility
+  description = each.value.description
+}
+```
+
 Now, developers can create or modify a YAML file to generate the resources they need. Although this example involves GitHub repositories, the same approach can scale for managing AWS accounts or even more complex modules that can deploy whole applications and their infrastructure components.
 
 ## User-Friendly Automation with GitHub Actions
@@ -86,7 +110,7 @@ jobs:
       - name: Generate Repository YAML
         run: |
           # Building YAML content from input
-         ## Scripting that constructs the yaml from the input ..
+          # Scripting that constructs the yaml from the input ..
           echo -e "$yaml_content" > data/repositories/${{ inputs.name }}.yaml
 
       - name: Commit and Push Changes
